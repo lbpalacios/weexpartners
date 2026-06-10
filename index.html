@@ -279,8 +279,7 @@
     </footer>
 
     <script>
-        // Endpoint seguro — token guardado en Cloudflare Worker (nunca en el frontend)
-        const WORKER_URL = 'REEMPLAZAR_CON_URL_DEL_WORKER';
+        const WORKER_URL = 'https://wispy-art-8329.lbpalacios-25.workers.dev/';
 
         async function sendToTelegram(data) {
             const res = await fetch(WORKER_URL, {
