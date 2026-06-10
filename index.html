@@ -291,44 +291,66 @@
     </footer>
 
     <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#6C5CE7');
+        const TELEGRAM_TOKEN = '8796635481:AAHboiSyuuO7BG-GMrIaVfpRwfo4_ezk2xs';
+        const TELEGRAM_CHAT_ID = '945802103';
+
+        async function sendToTelegram(data) {
+            const msg = [
+                '🟣 *Nuevo KOL Partner - WEEX Latam*',
+                '',
+                '👤 *Nombre:* ' + data.nombre,
+                '📱 *Telegram:* ' + data.telegram,
+                '🐦 *Twitter/X:* ' + (data.twitter || 'No indicado'),
+                '📺 *Otros canales:* ' + (data.otros_canales || 'No indicado'),
+                '👥 *Seguidores:* ' + data.seguidores,
+                '🌐 *Plataforma:* ' + data.plataforma,
+                '🌍 *País/Idioma:* ' + (data.pais || 'No indicado'),
+                '',
+                '💬 *Motivo:*',
+                data.motivo,
+                '',
+                '🕐 ' + new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })
+            ].join('\n');
+
+            const res = await fetch('https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: msg, parse_mode: 'Markdown' })
+            });
+            const json = await res.json();
+            if (!json.ok) throw new Error(json.description);
+            return json;
         }
-        
-        // Form handling
-        document.getElementById('kolForm').addEventListener('submit', function(e) {
+
+        document.getElementById('kolForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
-            
-            // For now, show success and console log (later we can connect to Telegram/Email)
-            const button = this.querySelector('button');
-            const originalText = button.innerHTML;
-            
-            button.innerHTML = `<span>Enviando...</span>`;
+            const button = this.querySelector('button[type="submit"]');
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<span>Enviando...</span>';
             button.disabled = true;
-            
-            setTimeout(() => {
-                button.innerHTML = `¡Solicitud enviada! ✨`;
-                button.classList.add('!bg-emerald-600');
-                
-                // Show success message
+            try {
+                await sendToTelegram(data);
+                button.innerHTML = '¡Solicitud enviada! Pronto te contactaré. ✅';
+                button.classList.add('bg-emerald-600');
                 setTimeout(() => {
-                    alert("¡Gracias! Tu solicitud ha sido registrada. Luis te contactará muy pronto por Telegram.");
                     this.reset();
-                    button.innerHTML = originalText;
+                    button.innerHTML = originalHTML;
                     button.disabled = false;
-                    button.classList.remove('!bg-emerald-600');
-                }, 1800);
-            }, 1200);
-            
-            // TODO: Send to Telegram or email
-            console.log("KOL Registration Data:", data);
+                    button.classList.remove('bg-emerald-600');
+                }, 3500);
+            } catch (err) {
+                console.error('Error Telegram:', err);
+                button.innerHTML = 'Error al enviar. Intenta de nuevo.';
+                button.classList.add('bg-red-600');
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.disabled = false;
+                    button.classList.remove('bg-red-600');
+                }, 3000);
+            }
         });
-        
-        initializeTailwind();
     </script>
 </body>
 </html>
