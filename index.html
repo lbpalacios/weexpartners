@@ -279,35 +279,18 @@
     </footer>
 
     <script>
-        const TELEGRAM_TOKEN = '8796635481:AAHboiSyuuO7BG-GMrIaVfpRwfo4_ezk2xs';
-        const TELEGRAM_CHAT_ID = '945802103';
+        // Endpoint seguro — token guardado en Cloudflare Worker (nunca en el frontend)
+        const WORKER_URL = 'REEMPLAZAR_CON_URL_DEL_WORKER';
 
         async function sendToTelegram(data) {
-            const msg = [
-                '🟣 *Nuevo KOL Partner - WEEX Latam*',
-                '',
-                '👤 *Nombre:* ' + data.nombre,
-                '📱 *Telegram:* ' + data.telegram,
-                '🐦 *Twitter/X:* ' + (data.twitter || 'No indicado'),
-                '📺 *Otros canales:* ' + (data.otros_canales || 'No indicado'),
-                '👥 *Seguidores:* ' + data.seguidores,
-                '🌐 *Plataforma:* ' + data.plataforma,
-                '🌍 *País/Idioma:* ' + (data.pais || 'No indicado'),
-                '',
-                '💬 *Motivo:*',
-                data.motivo,
-                '',
-                '🕐 ' + new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })
-            ].join('\n');
-
-            const res = await fetch('https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage', {
+            const res = await fetch(WORKER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: msg, parse_mode: 'Markdown' })
+                body: JSON.stringify(data)
             });
-            const json = await res.json();
-            if (!json.ok) throw new Error(json.description);
-            return json;
+            const result = await res.json();
+            if (!result.ok) throw new Error(result.error || 'Error desconocido');
+            return result;
         }
 
         document.getElementById('kolForm').addEventListener('submit', async function(e) {
