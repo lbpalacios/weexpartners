@@ -36,7 +36,7 @@
         }
 
         .crypto-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
         
         .crypto-card:hover {
@@ -282,6 +282,12 @@
     </footer>
 
     <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#6C5CE7');
+        }
+        
+        // Form handling
         document.getElementById('kolForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -309,6 +315,8 @@
             
             console.log("KOL Registration Data:", data);
         });
+        
+        initializeTailwind();
     </script>
 </body>
 </html>
