@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         
         :root {
-            --weex-yellow: #D8AE15;
+            --weex-purple: #6C5CE7;
         }
         
         body {
@@ -23,11 +23,7 @@
         }
 
         .weex-gradient {
-            background: linear-gradient(135deg, #D8AE15 0%, #F0C832 100%);
-        }
-
-        .btn-weex {
-            color: #151515;
+            background: linear-gradient(135deg, #6C5CE7 0%, #A855F7 100%);
         }
 
         .glass {
@@ -60,7 +56,7 @@
         
         .form-input:focus {
             background: rgba(255,255,255,0.1);
-            border-color: #D8AE15;
+            border-color: #6C5CE7;
             box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
             outline: none;
         }
@@ -71,9 +67,9 @@
         }
     </style>
 </head>
-<body class="bg-[#151515] text-white">
+<body class="bg-[#0A0A0F] text-white">
     <!-- Navbar -->
-    <nav class="border-b border-white/10 bg-[#151515]/80 backdrop-blur-xl fixed w-full z-50">
+    <nav class="border-b border-white/10 bg-[#0A0A0F]/80 backdrop-blur-xl fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
                 <div class="flex items-center gap-x-2">
@@ -96,8 +92,6 @@
 
     <!-- Hero -->
     <div class="pt-20 pb-16 max-w-5xl mx-auto px-6 text-center">
-
-        
         <h1 class="section-header max-w-4xl mx-auto tracking-tighter">
             Conviértete en <span class="bg-clip-text text-transparent weex-gradient">KOL Partner</span><br>
             de WEEX y gana hasta <span class="font-mono">60%</span>
@@ -110,9 +104,13 @@
 
         <div class="mt-10 flex justify-center gap-x-4">
             <a href="#formulario" 
-               class="px-9 py-4 rounded-3xl weex-gradient btn-weex font-semibold text-lg flex items-center gap-x-3 hover:opacity-90 transition-all active:scale-[0.985]">
+               class="px-9 py-4 rounded-3xl weex-gradient font-semibold text-lg flex items-center gap-x-3 hover:opacity-90 transition-all active:scale-[0.985]">
                 <span>Registrarme como KOL</span>
                 <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://weex.com/affiliate" target="_blank"
+               class="px-8 py-4 rounded-3xl border border-white/20 hover:bg-white/5 font-medium flex items-center gap-x-2 transition-all">
+                <span>Conocer más</span>
             </a>
         </div>
         
@@ -157,14 +155,14 @@
     <!-- Beneficios -->
     <div id="beneficios" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/10">
         <div class="text-center mb-12">
-            <div class="text-[#D8AE15] font-semibold tracking-[3px] text-sm">EL PROGRAMA MÁS POTENTE</div>
+            <div class="text-[#6C5CE7] font-semibold tracking-[3px] text-sm">EL PROGRAMA MÁS POTENTE</div>
             <h2 class="text-5xl font-display tracking-tighter mt-3">¿Por qué unirte a WEEX?</h2>
         </div>
 
         <div class="grid md:grid-cols-3 gap-5">
             <div class="crypto-card glass rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-[#D8AE15]/10 flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-percentage text-[#D8AE15] text-3xl"></i>
+                <div class="w-12 h-12 rounded-2xl bg-[#6C5CE7]/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-percentage text-[#6C5CE7] text-3xl"></i>
                 </div>
                 <h3 class="font-semibold text-2xl tracking-tight">Hasta 60% de comisión</h3>
                 <p class="mt-3 text-white/70">La tasa más alta del mercado en futuros. 30% en spot. Sin límites.</p>
@@ -196,7 +194,7 @@
     <div id="formulario" class="max-w-3xl mx-auto px-6 pb-24">
         <div class="glass rounded-3xl p-10 md:p-14 border border-white/10">
             <div class="text-center mb-10">
-                <div class="inline-block px-4 py-1 rounded-3xl bg-[#D8AE15]/10 text-[#D8AE15] text-xs font-semibold tracking-widest mb-4">PARA KOLS E INFLUENCERS</div>
+                <div class="inline-block px-4 py-1 rounded-3xl bg-[#6C5CE7]/10 text-[#6C5CE7] text-xs font-semibold tracking-widest mb-4">PARA KOLS E INFLUENCERS</div>
                 <h2 class="text-4xl font-display tracking-tighter">Regístrate como Partner de Weex Latam</h2>
                 <p class="text-white/60 mt-3">Completa el formulario y te contactaré personalmente para activar tu cuenta de afiliado.</p>
             </div>
@@ -268,7 +266,7 @@
 
                 <div class="pt-4">
                     <button type="submit" 
-                            class="w-full py-4 rounded-3xl weex-gradient btn-weex text-lg font-semibold flex items-center justify-center gap-x-3 hover:opacity-90 active:scale-[0.985] transition-all">
+                            class="w-full py-4 rounded-3xl weex-gradient text-lg font-semibold flex items-center justify-center gap-x-3 hover:opacity-90 active:scale-[0.985] transition-all">
                         <span>Enviar solicitud</span>
                         <i class="fa-solid fa-paper-plane"></i>
                     </button>
@@ -307,21 +305,20 @@
             try {
                 await sendToTelegram(data);
                 button.innerHTML = '¡Solicitud enviada! Pronto te contactaré. ✅';
-                button.classList.add('bg-emerald-600');
+                button.classList.add('!bg-emerald-600');
                 setTimeout(() => {
                     this.reset();
                     button.innerHTML = originalHTML;
                     button.disabled = false;
-                    button.classList.remove('bg-emerald-600');
+                    button.classList.remove('!bg-emerald-600');
                 }, 3500);
             } catch (err) {
-                console.error('Error Telegram:', err);
                 button.innerHTML = 'Error al enviar. Intenta de nuevo.';
-                button.classList.add('bg-red-600');
+                button.classList.add('!bg-red-600');
                 setTimeout(() => {
                     button.innerHTML = originalHTML;
                     button.disabled = false;
-                    button.classList.remove('bg-red-600');
+                    button.classList.remove('!bg-red-600');
                 }, 3000);
             }
         });
