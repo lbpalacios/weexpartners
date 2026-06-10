@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weex Latam Partner • Registro KOLs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .weex-gradient {
+            background: linear-gradient(135deg, #6C5CE7 0%, #A855F7 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-header {
+            font-size: 2.75rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .crypto-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .crypto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .form-input {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            background: rgba(255,255,255,0.1);
+            border-color: #6C5CE7;
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0F] text-white">
+    <!-- Navbar -->
+    <nav class="border-b border-white/10 bg-[#0A0A0F]/80 backdrop-blur-xl fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="flex items-center gap-x-2">
+                    <div class="w-9 h-9 rounded-2xl weex-gradient flex items-center justify-center">
+                        <span class="font-display text-xl font-bold tracking-tighter">W</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">WEEX</span>
+                        <span class="text-xs text-white/50 font-mono tracking-[3px] ml-0.5">LATAM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-x-8 text-sm">
+                <a href="#beneficios" class="text-white/70 hover:text-white transition-colors">Beneficios</a>
+                <a href="#formulario" class="text-white/70 hover:text-white transition-colors">Únete</a>
+                <a href="https://weex.com/affiliate" target="_blank" 
+                   class="px-5 py-2.5 rounded-2xl border border-white/20 hover:bg-white/5 text-sm transition-all flex items-center gap-x-2">
+                    <span>weex.com/affiliate</span>
+                    <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="pt-20 pb-16 max-w-5xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-3xl bg-white/5 border border-white/10 mb-6">
+            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+            <span class="text-sm text-white/80 font-medium">Partner Oficial • Weex Latam</span>
+        </div>
+        
+        <h1 class="section-header max-w-4xl mx-auto tracking-tighter">
+            Conviértete en <span class="bg-clip-text text-transparent weex-gradient">KOL Partner</span><br>
+            de WEEX y gana hasta <span class="font-mono">60%</span>
+        </h1>
+        
+        <p class="mt-6 max-w-md mx-auto text-xl text-white/70">
+            Únete al programa de afiliados más rentable de la industria crypto.<br>
+            <span class="text-white/50">Pagos diarios • Sin mínimos • Soporte 24/7</span>
+        </p>
+
+        <div class="mt-10 flex justify-center gap-x-4">
+            <a href="#formulario" 
+               class="px-9 py-4 rounded-3xl weex-gradient font-semibold text-lg flex items-center gap-x-3 hover:opacity-90 transition-all active:scale-[0.985]">
+                <span>Registrarme como KOL</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://weex.com/affiliate" target="_blank"
+               class="px-8 py-4 rounded-3xl border border-white/20 hover:bg-white/5 font-medium flex items-center gap-x-2 transition-all">
+                <span>Conocer más</span>
+            </a>
+        </div>
+        
+        <div class="mt-12 flex justify-center gap-x-10 text-sm text-white/50">
+            <div class="flex items-center gap-x-2">
+                <i class="fa-solid fa-check text-emerald-400"></i>
+                <span>Pagos diarios</span>
+            </div>
+            <div class="flex items-center gap-x-2">
+                <i class="fa-solid fa-check text-emerald-400"></i>
+                <span>Hasta 60% comisión</span>
+            </div>
+            <div class="flex items-center gap-x-2">
+                <i class="fa-solid fa-check text-emerald-400"></i>
+                <span>Sin mínimos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="max-w-6xl mx-auto px-6 pb-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass rounded-3xl p-6 text-center">
+                <div class="text-4xl font-semibold font-display tracking-tighter">$300M+</div>
+                <div class="text-white/60 mt-1 text-sm">Pagados en comisiones</div>
+            </div>
+            <div class="glass rounded-3xl p-6 text-center">
+                <div class="text-4xl font-semibold font-display tracking-tighter">500+</div>
+                <div class="text-white/60 mt-1 text-sm">Afiliados activos</div>
+            </div>
+            <div class="glass rounded-3xl p-6 text-center">
+                <div class="text-4xl font-semibold font-display tracking-tighter">20,000+</div>
+                <div class="text-white/60 mt-1 text-sm">Ganando +$50k/mes</div>
+            </div>
+            <div class="glass rounded-3xl p-6 text-center">
+                <div class="text-4xl font-semibold font-display tracking-tighter">150+</div>
+                <div class="text-white/60 mt-1 text-sm">Países soportados</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Beneficios -->
+    <div id="beneficios" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/10">
+        <div class="text-center mb-12">
+            <div class="text-[#6C5CE7] font-semibold tracking-[3px] text-sm">EL PROGRAMA MÁS POTENTE</div>
+            <h2 class="text-5xl font-display tracking-tighter mt-3">¿Por qué unirte a WEEX?</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+            <div class="crypto-card glass rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-[#6C5CE7]/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-percentage text-[#6C5CE7] text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight">Hasta 60% de comisión</h3>
+                <p class="mt-3 text-white/70">La tasa más alta del mercado en futuros. 30% en spot. Sin límites.</p>
+                <div class="mt-6 pt-6 border-t border-white/10 text-sm text-white/50">Futures: 50-60% • Spot: 30%</div>
+            </div>
+            
+            <div class="crypto-card glass rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-clock text-emerald-400 text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight">Pagos diarios</h3>
+                <p class="mt-3 text-white/70">Recibe tus comisiones todos los días a las 8 PM UTC directamente en tu wallet.</p>
+                <div class="mt-4 inline-flex items-center text-xs px-3 py-1 rounded-2xl bg-emerald-500/10 text-emerald-400">
+                    <i class="fa-solid fa-bolt mr-1.5"></i> SIN ESPERA
+                </div>
+            </div>
+            
+            <div class="crypto-card glass rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-headset text-white text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight">Account Manager 24/7</h3>
+                <p class="mt-3 text-white/70">Soporte dedicado, recursos de marketing, eventos exclusivos y ayuda para crecer tu comunidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario -->
+    <div id="formulario" class="max-w-3xl mx-auto px-6 pb-24">
+        <div class="glass rounded-3xl p-10 md:p-14 border border-white/10">
+            <div class="text-center mb-10">
+                <div class="inline-block px-4 py-1 rounded-3xl bg-[#6C5CE7]/10 text-[#6C5CE7] text-xs font-semibold tracking-widest mb-4">PARA KOLS E INFLUENCERS</div>
+                <h2 class="text-4xl font-display tracking-tighter">Regístrate como Partner de Weex Latam</h2>
+                <p class="text-white/60 mt-3">Completa el formulario y te contactaré personalmente para activar tu cuenta de afiliado.</p>
+            </div>
+
+            <form id="kolForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Nombre completo *</label>
+                        <input type="text" name="nombre" required 
+                               class="form-input w-full px-5 py-3.5 rounded-2xl text-white placeholder:text-white/40">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Telegram *</label>
+                        <input type="text" name="telegram" required placeholder="@tuusuario"
+                               class="form-input w-full px-5 py-3.5 rounded-2xl text-white placeholder:text-white/40">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Usuario de X (Twitter)</label>
+                        <input type="text" name="twitter" placeholder="@tuusuario"
+                               class="form-input w-full px-5 py-3.5 rounded-2xl text-white placeholder:text-white/40">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">YouTube / TikTok / Otro</label>
+                        <input type="text" name="otros_canales" placeholder="Enlace o @usuario"
+                               class="form-input w-full px-5 py-3.5 rounded-2xl text-white placeholder:text-white/40">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Seguidores aproximados *</label>
+                        <select name="seguidores" required class="form-input w-full px-5 py-3.5 rounded-2xl text-white">
+                            <option value="">Selecciona</option>
+                            <option value="1k-5k">1,000 - 5,000</option>
+                            <option value="5k-15k">5,000 - 15,000</option>
+                            <option value="15k-50k">15,000 - 50,000</option>
+                            <option value="50k-100k">50,000 - 100,000</option>
+                            <option value="100k+">100,000+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Plataforma principal *</label>
+                        <select name="plataforma" required class="form-input w-full px-5 py-3.5 rounded-2xl text-white">
+                            <option value="">Selecciona</option>
+                            <option value="Twitter/X">Twitter / X</option>
+                            <option value="Telegram">Telegram</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Discord">Discord</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">País / Idioma</label>
+                        <input type="text" name="pais" placeholder="México / Español"
+                               class="form-input w-full px-5 py-3.5 rounded-2xl text-white placeholder:text-white/40">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-white/80 mb-2">¿Por qué quieres unirte al programa de WEEX? *</label>
+                    <textarea name="motivo" rows="3" required placeholder="Cuéntame un poco sobre tu audiencia y objetivos..."
+                              class="form-input w-full px-5 py-3.5 rounded-3xl text-white placeholder:text-white/40 resize-y"></textarea>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" 
+                            class="w-full py-4 rounded-3xl weex-gradient text-lg font-semibold flex items-center justify-center gap-x-3 hover:opacity-90 active:scale-[0.985] transition-all">
+                        <span>Enviar solicitud</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <p class="text-center text-xs text-white/50 mt-4">Te contactaré en menos de 24 horas para activar tu cuenta.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="border-t border-white/10 py-8 text-center text-xs text-white/40">
+        Weex Latam Partner • Luis Palacios • 2025
+    </footer>
+
+    <script>
+        document.getElementById('kolForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            const button = this.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = `<span>Enviando...</span>`;
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = `¡Solicitud enviada! ✨`;
+                button.classList.add('!bg-emerald-600');
+                
+                setTimeout(() => {
+                    alert("¡Gracias! Tu solicitud ha sido registrada. Luis te contactará muy pronto por Telegram.");
+                    this.reset();
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    button.classList.remove('!bg-emerald-600');
+                }, 1800);
+            }, 1200);
+            
+            console.log("KOL Registration Data:", data);
+        });
+    </script>
+</body>
+</html>
